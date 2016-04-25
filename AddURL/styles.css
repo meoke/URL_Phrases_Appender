@@ -1,0 +1,37 @@
+html, body, h1, h2, h3, p, ol, ul, li, a {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font-size: 100%; /*resetowanie domyślnych ustawień fontów*/
+	font: inherit; /*resetowanie domyślnych ustawień fontów*/
+}
+
+body {
+	/*background: #aaaaaa url(images/gobbler.png) top left repeat;*/
+	font-family: Helvetica, Arial, "Times New Roman", sans-serif;/* ideal font*/
+}
+
+.popup-container{
+	width: 200px;
+	margin: 0 auto 0 auto;
+}
+
+.header {
+	padding: 10px 10px 10px 10px;
+	background-color: #b56663;
+	/*height: 30px;*/
+	margin: 0 auto 0 auto;
+	vertical-align: middle;
+}
+
+.header * {
+	display: inline;
+}
+#phrases{
+	padding-top:10px;
+}
+/*
+.btn{
+	width:200px;
+	text-align: left;
+}*/

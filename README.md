@@ -1,7 +1,6 @@
 # Chrome Extensions Repository #
 
-----------
-
+Here are stored all Chrome Repositories I created. Feel free to use them!
 
 ## Add URL *(work in progress)* ##
 ### Description ###
