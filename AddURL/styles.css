@@ -19,14 +19,27 @@ body {
 .header {
 	padding: 10px 10px 10px 10px;
 	background-color: #b56663;
-	/*height: 30px;*/
 	margin: 0 auto 0 auto;
-	vertical-align: middle;
+	color: white;
 }
 
-.header * {
-	display: inline;
+.header h3 {
+	height: 1.5 em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*text-align: middle;*/
 }
+
+button :first-child{
+	margin-top: 5px;
+}
+
+button {
+	width: 190px;
+	margin: 0 5px 5px 5px;
+}
+
 #phrases{
 	padding-top:10px;
 }
