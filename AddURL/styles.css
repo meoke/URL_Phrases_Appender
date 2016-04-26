@@ -2,13 +2,12 @@ html, body, h1, h2, h3, p, ol, ul, li, a {
 	padding: 0;
 	border: 0;
 	margin: 0;
-	font-size: 100%; /*resetowanie domyślnych ustawień fontów*/
-	font: inherit; /*resetowanie domyślnych ustawień fontów*/
+	font-size: 100%;
+	font: inherit;
 }
 
 body {
-	/*background: #aaaaaa url(images/gobbler.png) top left repeat;*/
-	font-family: Helvetica, Arial, "Times New Roman", sans-serif;/* ideal font*/
+	font-family: Tahoma, Helvetica, "Times New Roman", sans-serif;
 }
 
 .popup-container{
@@ -16,35 +15,53 @@ body {
 	margin: 0 auto 0 auto;
 }
 
-.header {
-	padding: 10px 10px 10px 10px;
-	background-color: #b56663;
+#options-container{
+	width: 500px;
 	margin: 0 auto 0 auto;
-	color: white;
+	border: #3f5765 solid 2px;
 }
 
-.header h3 {
+.header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #3f5765;
+	margin: 0 auto 0 auto;
+	color: #efefef;
+	overflow: auto;
 	height: 1.5 em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/*text-align: middle;*/
 }
 
-button :first-child{
-	margin-top: 5px;
+.header h1 {
+	font-size: 20px;
+	text-align: center;
 }
 
-button {
-	width: 190px;
-	margin: 0 5px 5px 5px;
+.header a {
+	float: right;
+	margin: 10px 10px -5px 0;
+	font-size: 16px;
+	color: #ff530d;
 }
 
-#phrases{
-	padding-top:10px;
+.popup-container button {
+	width: 192px;
+	margin: 0 3px 3px 3px;
+	color: #2b3a42;
 }
-/*
-.btn{
-	width:200px;
-	text-align: left;
-}*/
+
+.popup-container .main-content{
+	padding-top: 3px;
+}
+
+#options-container .main-content {
+	background-color: #efefef;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+h2 {
+	color: #ff530d;
+	padding: 10px 10px 10px 0;
+	font-size: 20px;
+}
+
