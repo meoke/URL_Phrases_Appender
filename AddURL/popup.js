@@ -11,7 +11,7 @@ function createButtons(){
   }, function(items) {
     for(i = 0;i < items.phrases.length;i++)
     {
-      var div = document.createElement('div');
+      //var div = document.createElement('div');
       
       var phraseBtn = document.createElement('button');
       phraseBtn.textContent = items.phrases[i];
@@ -22,8 +22,9 @@ function createButtons(){
         addAndReload(items.phrases[i]);
         });
       }(i))
-      div.appendChild(phraseBtn);
-      document.getElementById('phrases').appendChild(div);
+      //div.appendChild(phraseBtn);
+      document.getElementById("phrases").appendChild(phraseBtn);
+      //document.getElementById('phrases').appendChild(div);
     }
   });
 }

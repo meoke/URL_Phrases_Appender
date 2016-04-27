@@ -65,3 +65,17 @@ h2 {
 	font-size: 20px;
 }
 
+input[type="checkbox"] {
+    margin: 0 auto;
+}
+
+#status {
+	color: red;
+	font-size: 14px;
+	margin: 5px 0 5px 0;
+}
+
+.tdcenter {
+    text-align: center;
+    vertical-align: center;
+}
