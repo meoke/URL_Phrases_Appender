@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Add Me To URL",
-  "description": "This extension enables adding a predifined phrase to current URL address.",
+  "name": "Add Me To URL!",
+  "description": "This extension enables adding a predifined phrase to current URL address and reloading the page.",
   "version": "1.0",
   "options_page": "options.html",
   "browser_action": {

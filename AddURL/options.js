@@ -89,7 +89,7 @@ function addPhraseToStorage() {
   var phraseToAddText = document.getElementById('addNewPhraseInput').value;
 
   if (isEmpty(phraseToAddText)) {
-    return;
+    return false;
   }
 
   chrome.storage.sync.get({ phrases: []}, function (items) {
@@ -98,7 +98,7 @@ function addPhraseToStorage() {
 
     if (index != -1) {
       showMessage("Phrase you want to add already exists!", "status");
-      return;
+      return false;
     }
 
     userPhrases.push(phraseToAddText);
@@ -106,7 +106,7 @@ function addPhraseToStorage() {
     chrome.storage.sync.set({ phrases: userPhrases}, function () { });
       location.reload();
   })
-
+  return false;
 }
 
 function clearElement(elementName) {
@@ -117,12 +117,17 @@ function clearElement(elementName) {
 function showMessage(message, elementID) {
   var status = document.getElementById(elementID);
   status.innerText = message;
+  console.log("hej");
   setTimeout(function () {
-    clearElement();
+    clearElement(elementID);
+    console.log("hej2");
   }, 2500);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   restore_phrases();
-  document.getElementById("addNewPhraseButton").addEventListener('click', addPhraseToStorage);
+  document.getElementById("addNewPhraseForm").addEventListener('submit', function(e) {
+    e.preventDefault();
+    addPhraseToStorage();
+  });
 });
