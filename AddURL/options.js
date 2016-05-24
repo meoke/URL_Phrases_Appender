@@ -109,10 +109,10 @@ function restore_phrases() {
   chrome.storage.sync.get({
     phrases: [], reloadsSettings: []
   }, function (items) {
-    var tbl = document.createElement("table");
-    tbl.appendChild(createOptionsTableHead());
-    tbl.appendChild(createOptionsTableBody(items.phrases, items.reloadsSettings));
-    document.getElementById('phrasesList').appendChild(tbl);
+    var settingsTable = document.createElement("table");
+    settingsTable.appendChild(createOptionsTableHead());
+    settingsTable.appendChild(createOptionsTableBody(items.phrases, items.reloadsSettings));
+    document.getElementById('phrasesList').appendChild(settingsTable);
   });
 
 }
@@ -121,8 +121,8 @@ function isEmpty(str) {
   return (!str || 0 === str.trim().length);
 }
 
-function add_phrase() {
-  clearStatus()
+function addPhraseToStorage() {
+  clearElement("status")
   var phraseToAddText = document.getElementById('addNewPhraseInput').value;
 
   if (isEmpty(phraseToAddText)) {
@@ -134,7 +134,7 @@ function add_phrase() {
     var index = userPhrases.indexOf(phraseToAddText);
 
     if (index != -1) {
-      renderStatus("Phrase you want to add already exists!");
+      showMessage("Phrase you want to add already exists!", "status");
       return;
     }
 
@@ -148,21 +148,20 @@ function add_phrase() {
 
 }
 
-function clearStatus() {
-  var status = document.getElementById('status');
-  status.textContent = '';
+function clearElement(elementName) {
+  var element = document.getElementById(elementName);
+  element.textContent = '';
 }
 
-function renderStatus(statusText) {
-  var status = document.getElementById('status');
-  status.innerText = statusText;
-  //status.textContent = statusText;
+function showMessage(message, elementID) {
+  var status = document.getElementById(elementID);
+  status.innerText = message;
   setTimeout(function () {
-    clearStatus();
+    clearElement();
   }, 2500);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   restore_phrases();
-  document.getElementById("addNewPhraseButton").addEventListener('click', add_phrase);
+  document.getElementById("addNewPhraseButton").addEventListener('click', addPhraseToStorage);
 });
