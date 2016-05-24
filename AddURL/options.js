@@ -1,14 +1,12 @@
 function removePhrase(phraseToRemove) {
-  chrome.storage.sync.get({ phrases: [], reloadsSettings: [] }, function (items) {
+  chrome.storage.sync.get({ phrases: []}, function (items) {
     var userPhrases = items.phrases;
     var index = userPhrases.indexOf(phraseToRemove);
     while (index != -1) {
       userPhrases.splice(index, 1);
-      var userReloadsSettings = items.reloadsSettings;
-      userReloadsSettings.splice(index, 1);
       index = userPhrases.indexOf(phraseToRemove);
     }
-    chrome.storage.sync.set({ phrases: userPhrases, reloadsSettings: userReloadsSettings}, function () { });
+    chrome.storage.sync.set({ phrases: userPhrases}, function () { });
     restore_phrases();
   })
 }
@@ -29,23 +27,20 @@ function createOptionsTableHead() {
   var colRemoveBtn = document.createElement("td");
   colRemoveBtn.innerHTML = "";
   headRow.appendChild(colRemoveBtn);
-  var colReloadCheckbox = document.createElement("td");
-  colReloadCheckbox.innerHTML = "Auto-reload";
-  headRow.appendChild(colReloadCheckbox);
   tblHead.appendChild(headRow);
   return tblHead;
 }
 
-function createCellWithString(stringName) {
+function createTextTableCell(text) {
   var cellString = document.createElement("td");
   var phrase = document.createElement('input');
-  phrase.value = stringName;
+  phrase.value = text;
   phrase.disabled = true;
   cellString.appendChild(phrase);
   return cellString;
 }
 
-function createCellWithRemoveBtn(phraseName) {
+function createTableCellWithRemoveBtn(phraseName) {
   var cellRemoveButton = document.createElement("td");
   var removePhraseBtn = document.createElement('button');
   removePhraseBtn.textContent = 'Remove';
@@ -57,46 +52,14 @@ function createCellWithRemoveBtn(phraseName) {
   return cellRemoveButton;
 }
 
-function changeReloadsSettings(phraseName) {
-  chrome.storage.sync.get({ phrases: [], reloadsSettings: [] }, function (items) {
-    var userPhrases = items.phrases;
-    var index = userPhrases.indexOf(phraseName);
-
-    if (index == -1) {
-      return;
-    }
-
-    var userReloadsSettings = items.reloadsSettings;
-    var currentSetting = userReloadsSettings[index];
-    userReloadsSettings[index] = !currentSetting;
-    
-    chrome.storage.sync.set({ phrases: userPhrases, reloadsSettings: userReloadsSettings }, function () { });
-      location.reload();
-  })
-}
-
-function createCellWithReloadCheckbox(phraseName, reloadSettingValue) {
-  var cellReloadCheckbox = document.createElement("td");
-  var reloadCheckbox = document.createElement('input');
-  reloadCheckbox.type = "checkbox";
-  reloadCheckbox.addEventListener('click', function () {
-    changeReloadsSettings(phraseName);
-  })
-  reloadSettingValue ? reloadCheckbox.checked = true : reloadCheckbox.checked = false;
-  cellReloadCheckbox.className = "tdcenter"; 
-  cellReloadCheckbox.appendChild(reloadCheckbox);
-  return cellReloadCheckbox;
-}
-
-function createOptionsTableBody(userPhrases, userReloadsSettings) {
+function createOptionsTableBody(userPhrases) {
   var tblBody = document.createElement("tbody");
 
   for (i = 0; i < userPhrases.length; i++) {
     var row = document.createElement("tr");
 
-    row.appendChild(createCellWithString(userPhrases[i]));
-    row.appendChild(createCellWithRemoveBtn(userPhrases[i]));
-    row.appendChild(createCellWithReloadCheckbox(userPhrases[i], userReloadsSettings[i]));
+    row.appendChild(createTextTableCell(userPhrases[i]));
+    row.appendChild(createTableCellWithRemoveBtn(userPhrases[i]));
 
     tblBody.appendChild(row);
   }
@@ -107,11 +70,11 @@ function restore_phrases() {
   clear_current_phrases();
 
   chrome.storage.sync.get({
-    phrases: [], reloadsSettings: []
+    phrases: []
   }, function (items) {
     var settingsTable = document.createElement("table");
     settingsTable.appendChild(createOptionsTableHead());
-    settingsTable.appendChild(createOptionsTableBody(items.phrases, items.reloadsSettings));
+    settingsTable.appendChild(createOptionsTableBody(items.phrases));
     document.getElementById('phrasesList').appendChild(settingsTable);
   });
 
@@ -129,7 +92,7 @@ function addPhraseToStorage() {
     return;
   }
 
-  chrome.storage.sync.get({ phrases: [], reloadsSettings: [] }, function (items) {
+  chrome.storage.sync.get({ phrases: []}, function (items) {
     var userPhrases = items.phrases;
     var index = userPhrases.indexOf(phraseToAddText);
 
@@ -138,11 +101,9 @@ function addPhraseToStorage() {
       return;
     }
 
-    var userReloadsSettings = items.reloadsSettings;
     userPhrases.push(phraseToAddText);
-    userReloadsSettings.push(false);
     
-    chrome.storage.sync.set({ phrases: userPhrases, reloadsSettings: userReloadsSettings }, function () { });
+    chrome.storage.sync.set({ phrases: userPhrases}, function () { });
       location.reload();
   })
 

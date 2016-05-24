@@ -1,19 +1,9 @@
-function checkIfShouldReload(textToAdd) {
-  return true;
-}
-
 function addURL(textToAdd) {
-  var shouldReload = checkIfShouldReload(textToAdd);
-  // var commandToExecute = 'window.history.pushState(null,null, \"'.concat(textToAdd, '\")')
-  //  chrome.tabs.executeScript({
-  //          code: commandToExecute
-  //        });
-  if (shouldReload) {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      var currentURL = tabs[0].url;
-      chrome.tabs.update(tabs[0].id, { url: currentURL + textToAdd });
-    });
-  }
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var currentURL = tabs[0].url;
+    chrome.tabs.update(tabs[0].id, { url: currentURL + textToAdd });
+  });
+
 }
 
 function createButtons() {
