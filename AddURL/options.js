@@ -73,7 +73,7 @@ function restore_phrases() {
     phrases: []
   }, function (items) {
     var settingsTable = document.createElement("table");
-    settingsTable.appendChild(createOptionsTableHead());
+    //settingsTable.appendChild(createOptionsTableHead());
     settingsTable.appendChild(createOptionsTableBody(items.phrases));
     document.getElementById('phrasesList').appendChild(settingsTable);
   });
