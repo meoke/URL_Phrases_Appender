@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
 
-  "name": "URL appender",
+  "name": "URL phrases appender",
   "description": "Define a set of phrases you frequently need to add to your address bar. Append them to URL with just one click!",
   "version": "1.0.1",
   "options_page": "options.html",
   "browser_action": {
     "default_icon": "logo.png",
     "default_popup": "popup.html",
-    "default_title": "URL appender"
+    "default_title": "URL phrases appender"
   },
   "permissions": [
     "activeTab",
