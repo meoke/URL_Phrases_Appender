@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
 
-  "name": "Add Me To URL!",
-  "description": "This extension enables adding a predifined phrase to current URL address and reloading the page.",
-  "version": "1.0",
+  "name": "URL appender",
+  "description": "With this extension you can define a set of phrases you frequently need to add to your address bar. Then append any of these phrases to your URL with just one click.",
+  "version": "1.0.1",
   "options_page": "options.html",
   "browser_action": {
     "default_icon": "logo.png",
     "default_popup": "popup.html",
-    "default_title": "Add to URL!"
+    "default_title": "URL appender"
   },
   "permissions": [
     "activeTab",
