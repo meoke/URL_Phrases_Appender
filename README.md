@@ -1,11 +1,20 @@
-# Chrome Extensions Repository #
+# URL Phrases Appender #
 
-Here are stored all Chrome Repositories I created. Feel free to use them!
-
-## Add URL *(work in progress)* ##
 ### Description ###
 
-**Add URL** allows you to add a string from your predefined list of strings to your current URL address.
+**URL Phrases Appender** enables you to define a set of phrases you frequently need to add to your address bar. Append them to URL with just one click!
 
 ### How to install? ###
-This extension has not been published yet. Download its zip package and follow this [instruction](https://developer.chrome.com/extensions/getstarted#unpacked) to install it on your own.
+Just go to [Chrome Web Store - URL Phrases Appender](https://chrome.google.com/webstore/detail/url-phrases-appender/mjbgamofkgedfapbfmfjglddgghdmhlm?utm_source=chrome-ntp-icon), and add this extension to your browser.
+
+### How to use? ###
+
+1. Open the extension by clicking on its icon: ![logo](https://github.com/meoke/URL_Phrases_Appender/blob/master/logo.png)
+
+2. Go to settings.
+ 
+3. Define the phrases you frequently append to the URL.
+ 
+4. Click on the phrase to add it to your address bar! The page will automatically reload.
+
+![extension overview](https://github.com/meoke/URL_Phrases_Appender/blob/master/images/overview.png)

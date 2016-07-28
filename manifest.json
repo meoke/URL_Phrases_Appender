@@ -3,7 +3,7 @@
 
   "name": "URL phrases appender",
   "description": "Define a set of phrases you frequently need to add to your address bar. Append them to URL with just one click!",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "options_page": "options.html",
   "browser_action": {
     "default_icon": "logo.png",
