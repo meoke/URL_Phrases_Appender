@@ -1,0 +1,81 @@
+html, body, h1, h2, h3, p, ol, ul, li, a {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+body {
+	font-family: Tahoma, Helvetica, "Times New Roman", sans-serif;
+}
+
+.popup-container{
+	width: 200px;
+	margin: 0 auto 0 auto;
+}
+
+#options-container{
+	width: 500px;
+	margin: 0 auto 0 auto;
+	border: #3f5765 solid 2px;
+}
+
+.header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #3f5765;
+	margin: 0 auto 0 auto;
+	color: #efefef;
+	overflow: auto;
+	height: 1.5 em;
+}
+
+.header h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+.header a {
+	float: right;
+	margin: 10px 10px -5px 0;
+	font-size: 16px;
+	color: #ff530d;
+}
+
+.popup-container button {
+	width: 192px;
+	margin: 0 3px 3px 3px;
+	color: #2b3a42;
+}
+
+.popup-container .main-content{
+	padding-top: 3px;
+}
+
+#options-container .main-content {
+	background-color: #efefef;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+h2 {
+	color: #ff530d;
+	padding: 10px 10px 10px 0;
+	font-size: 20px;
+}
+
+input[type="checkbox"] {
+    margin: 0 auto;
+}
+
+#status {
+	color: red;
+	font-size: 14px;
+	margin: 5px 0 5px 0;
+}
+
+.tdcenter {
+    text-align: center;
+    vertical-align: center;
+}

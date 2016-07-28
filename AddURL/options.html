@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>URL phraeses appender - options page</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<script src="options.js"></script>
+	<div id="options-container">
+		<div class="header">
+			<h1>URL appender - settings</h1>
+		</div>
+		<div class="main-content">
+			<h2>Add a new phrase:</h2>
+			<div id="status"></div>
+			<form id="addNewPhraseForm">
+				<input type='text' id="addNewPhraseInput" autofocus='true' maxlength="20"/>
+				<input id="addNewPhraseButton" type="submit" class='btn' value="Add" onclick=addPhraseToStorage()"/>
+			</form>
+			<h2>Your phrases:</h2>
+			<div id="phrasesList"></div>
+		</div>
+	</div>
+</body>
+
+</html>
